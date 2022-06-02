@@ -5,11 +5,18 @@ pluginManagement {
         mavenCentral()
     }
 }
+String storageUrl = System.env.FLUTTER_STORAGE_BASE_URL ?: "https://storage.googleapis.com"
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        maven {
+            url '/Users/01042937/flutter_projects/fs_flutter_module/build/host/outputs/repo'
+        }
+        maven {
+            url "$storageUrl/download.flutter.io"
+        }
     }
 }
 rootProject.name = "bottom_navigation_flutter_sample"
