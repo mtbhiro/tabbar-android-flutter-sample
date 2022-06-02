@@ -32,7 +32,10 @@ class HomeFragment : Fragment() {
 
         binding.flutterButton.setOnClickListener {
             startActivity(
-                FlutterActivity.createDefaultIntent(requireActivity())
+//                FlutterActivity.createDefaultIntent(requireActivity())
+                    FlutterActivity
+                        .withCachedEngine("my_engine")
+                        .build(requireActivity())
             );
         }
         return root
